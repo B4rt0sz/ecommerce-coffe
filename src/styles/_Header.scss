@@ -1,0 +1,84 @@
+.header {
+  position: relative;
+  width: 100%;
+  background-color: $DarkGoldColor;
+  z-index: 1;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+  }
+
+  &__menu {
+    &-list {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    &-item {
+      font-size: 1.8em;
+
+      a {
+        margin: 0.2em;
+        padding: 0.5em;
+        text-decoration: none;
+        text-transform: capitalize;
+        color: $BlackColor;
+
+        &:hover {
+          border-radius: 10px;
+          background-color: $LightGoldColor;
+        }
+      }
+    }
+  }
+
+  &__hamburger {
+    &-icon {
+      font-size: 4em;
+      color: $BlackColor;
+      cursor: pointer;
+    }
+  }
+
+  &__menuMobile {
+    position: absolute;
+    top: 97px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: $DarkGoldColor;
+    border-top: 3px solid $LightGoldColor;
+
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin: 50px;
+    }
+
+    &-item {
+      width: 100%;
+      font-size: 2em;
+      margin: 1.2em;
+      text-align: center;
+
+      a {
+        margin: 0.2em;
+        padding: 0.5em;
+        text-decoration: none;
+        text-transform: capitalize;
+        color: $BlackColor;
+
+        &:hover {
+          border-radius: 10px;
+          background-color: $LightGoldColor;
+        }
+      }
+    }
+  }
+}
