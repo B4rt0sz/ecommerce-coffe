@@ -1,0 +1,59 @@
+.termsConditions {
+  @include PrivacyGeneral;
+
+  &__title {
+    @include PrivacyTitle;
+  }
+
+  &__introductory {
+    @include PrivacyTerms;
+  }
+
+  &__definitions {
+    @include PrivacyTerms;
+  }
+
+  &__contact {
+    @include PrivacyTerms;
+  }
+
+  &__requirements {
+    @include PrivacyTerms;
+  }
+
+  &__informations {
+    @include PrivacyTerms;
+  }
+
+  &__account {
+    @include PrivacyTerms;
+  }
+
+  &__rules {
+    @include PrivacyTerms;
+  }
+
+  &__offer {
+    @include PrivacyTerms;
+  }
+
+  &__contract {
+    @include PrivacyTerms;
+  }
+
+  &__withdrawal {
+    @include PrivacyTerms;
+  }
+
+  &__complaint {
+    @include PrivacyTerms;
+  }
+
+  &__claims {
+    @include PrivacyTerms;
+  }
+
+  &__final {
+    @include PrivacyTerms;
+  }
+}
