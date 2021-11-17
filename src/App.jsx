@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 
 import LoadingScreen from './layouts/LoadingScreen'
 import Header from './layouts/Header'
+import Footer from './layouts/Footer'
 import ScrollToTopButton from './components/App/ScrollToTopButton'
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       {loading === false ? (
         <div className='wrapper'>
           <Header />
+          <Footer />
           <ScrollToTopButton />
         </div>
       ) : (
