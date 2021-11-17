@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 
 import LoadingScreen from './layouts/LoadingScreen'
 
+import ScrollToTopButton from './components/App/ScrollToTopButton'
+
 function App() {
   const [loading, setLoading] = useState(true)
 
@@ -12,7 +14,9 @@ function App() {
   return (
     <>
       {loading === false ? (
-        <div className='wrapper'>Strona</div>
+        <div className='wrapper'>
+          <ScrollToTopButton />
+        </div>
       ) : (
         <LoadingScreen />
       )}

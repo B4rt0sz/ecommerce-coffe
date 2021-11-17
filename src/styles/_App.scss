@@ -15,3 +15,19 @@ body {
   margin: 0 auto;
   padding: 16px 32px;
 }
+
+.toTopButton {
+  position: fixed;
+  bottom: 50px;
+  right: 9px;
+  font-size: 24px;
+  background-color: $BlackColor;
+  color: $GoldIcon;
+  cursor: pointer;
+  border-radius: 100px;
+  border: none;
+
+  &:hover {
+    color: $LightGoldColor;
+  }
+}
