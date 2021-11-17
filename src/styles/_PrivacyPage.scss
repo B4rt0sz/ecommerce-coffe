@@ -1,0 +1,14 @@
+.privacy {
+  @include PrivacyGeneral;
+
+  &__title {
+    @include PrivacyTitle;
+  }
+
+  &__general {
+    @include PrivacyTerms;
+  }
+  &__cookie {
+    @include PrivacyTerms;
+  }
+}
