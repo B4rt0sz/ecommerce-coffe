@@ -1,0 +1,17 @@
+body {
+  background-color: $mainBackgroundColor;
+  font-family: $default-font;
+  min-height: 100vh;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 16px 32px;
+}
