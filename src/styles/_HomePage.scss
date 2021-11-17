@@ -1,0 +1,128 @@
+.home {
+  flex-grow: 1;
+  color: $WhiteColor;
+
+  .container {
+    margin: 0;
+    max-width: 3840px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__banner {
+    position: relative;
+    height: 90vh;
+
+    &-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      object-fit: cover;
+    }
+
+    &-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #444;
+      mix-blend-mode: overlay;
+      z-index: -1;
+    }
+    &-text {
+      color: $LightGoldColor;
+      font-family: $mainTitle-font;
+      h2 {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-size: 4.4em;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+      }
+      a {
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        width: 80%;
+        transform: translate(-50%, -50%);
+        color: $LightGoldColor;
+        text-align: center;
+        text-decoration: none;
+        font-size: 2.4em;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+      }
+    }
+  }
+
+  &__description {
+    align-self: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 16px 16px;
+
+    @media (min-width: 764px) {
+      max-width: 1280px;
+    }
+
+    img {
+      width: 100%;
+
+      @media (min-width: 764px) {
+        width: 50%;
+      }
+    }
+    p {
+      text-align: justify;
+      font-size: 1.2em;
+      background-color: #282828;
+      padding: 10px 10px;
+      line-height: 1.2em;
+
+      @media (min-width: 764px) {
+        width: 50%;
+        padding: 20px 20px;
+        font-size: 1.6em;
+      }
+    }
+  }
+
+  &__subscription {
+    align-self: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 16px 16px;
+
+    @media (min-width: 764px) {
+      max-width: 1280px;
+    }
+
+    img {
+      width: 100%;
+
+      @media (min-width: 764px) {
+        width: 50%;
+      }
+    }
+    p {
+      text-align: justify;
+      font-size: 1.2em;
+      background-color: #282828;
+      padding: 10px 10px;
+      line-height: 1.2em;
+
+      @media (min-width: 764px) {
+        width: 50%;
+        padding: 20px 20px;
+        font-size: 1.6em;
+      }
+    }
+  }
+}
