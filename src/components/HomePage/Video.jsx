@@ -8,6 +8,7 @@ const Video = () => {
       <video
         className='home__banner-video'
         src={coffeeVideo}
+        playsInline
         autoPlay
         loop
         muted
