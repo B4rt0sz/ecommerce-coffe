@@ -12,6 +12,47 @@ $MediumGoldColor: #a2773c;
 $DarkGoldColor: #996e34;
 $GoldIcon: #be9758;
 
+@mixin General {
+  flex-grow: 1;
+  color: $WhiteColor;
+  font-weight: 300;
+}
+
+@mixin MainTitle {
+  color: $LightGoldColor;
+  font-family: $mainTitle-font;
+  text-align: center;
+  font-size: 4.4em;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+}
+
+@mixin MobileTitle {
+  color: $LightGoldColor;
+  font-family: $mainTitle-font;
+  text-align: center;
+  font-size: 2.2em;
+  padding: 10px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+}
+
+@mixin Table {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #282828;
+}
+
+@mixin TextMobile {
+  font-size: 1.2em;
+  line-height: 1.2em;
+}
+@mixin TextDesktop {
+  font-size: 1.6em;
+  line-height: 1.4;
+}
+
 @mixin PrivacyGeneral {
   flex-grow: 1;
   color: $WhiteColor;

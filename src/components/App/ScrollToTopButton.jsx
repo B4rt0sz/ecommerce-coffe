@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { BsFillArrowUpCircleFill } from 'react-icons/bs'
+import { IoIosArrowDropupCircle } from 'react-icons/io'
 
 const ScrollToTopButton = () => {
   const [showButton, setShowButton] = useState(false)
@@ -24,10 +25,7 @@ const ScrollToTopButton = () => {
   return (
     <>
       {showButton && (
-        <BsFillArrowUpCircleFill
-          onClick={scrollToTop}
-          className='toTopButton'
-        />
+        <IoIosArrowDropupCircle onClick={scrollToTop} className='toTopButton' />
       )}
     </>
   )
