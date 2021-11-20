@@ -1,0 +1,149 @@
+.subscription {
+  @include General;
+
+  &__title {
+    @include MainTitle;
+    margin: 20px;
+  }
+
+  &__info {
+    @include Table;
+    margin-bottom: 32px;
+
+    img {
+      width: 100%;
+      border-radius: 10px 10px 0 0;
+
+      @media (min-width: 764px) {
+        border-radius: 10px 0 0 10px;
+        width: 50%;
+      }
+    }
+    p {
+      text-align: justify;
+      padding: 10px;
+      @include TextMobile;
+
+      @media (min-width: 764px) {
+        width: 50%;
+        padding: 20px;
+        @include TextDesktop;
+      }
+    }
+  }
+
+  &__points {
+    padding: 10px;
+    margin-bottom: 32px;
+    border-radius: 10px;
+    background-color: #282828;
+
+    &-title {
+      @include MobileTitle;
+
+      @media (min-width: 764px) {
+        font-size: 2.8em;
+      }
+    }
+
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      &-item {
+        width: 100%;
+        margin-bottom: 6px;
+        @include TextMobile;
+
+        @media (min-width: 764px) {
+          width: 33%;
+          padding: 5px;
+          @include TextDesktop;
+        }
+      }
+    }
+  }
+
+  &__plan {
+    display: flex;
+    flex-wrap: wrap;
+
+    @media (min-width: 764px) {
+      justify-content: space-between;
+    }
+
+    &-info {
+      width: 100%;
+      margin-bottom: 16px;
+      padding: 10px;
+      border-radius: 10px;
+      background-color: #282828;
+
+      @media (min-width: 764px) {
+        width: 49%;
+        margin-bottom: 0;
+      }
+
+      &-title {
+        @include MobileTitle;
+
+        @media (min-width: 764px) {
+          font-size: 2.8em;
+        }
+      }
+
+      &-text {
+        text-align: justify;
+        @include TextMobile;
+
+        &:first-of-type {
+          margin-bottom: 5px;
+
+          @media (min-width: 764px) {
+            margin-bottom: 10px;
+          }
+        }
+
+        @media (min-width: 764px) {
+          text-align: center;
+          @include TextDesktop;
+        }
+      }
+    }
+
+    &-list {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      @include Table;
+      align-items: stretch;
+
+      @media (min-width: 764px) {
+        width: 49%;
+        margin-bottom: 0;
+      }
+
+      &-title {
+        width: 100%;
+        @include MobileTitle;
+
+        @media (min-width: 764px) {
+          font-size: 2.8em;
+        }
+      }
+
+      &-item {
+        width: 100%;
+        margin-bottom: 6px;
+        text-align: center;
+        @include TextMobile;
+
+        @media (min-width: 764px) {
+          margin: 0;
+          @include TextDesktop;
+        }
+      }
+    }
+  }
+}
