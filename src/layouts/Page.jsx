@@ -6,6 +6,7 @@ import PrivacyPage from '../pages/PrivacyPage'
 import TermsPage from '../pages/TermsPage'
 import SubscriptionPage from '../pages/SubscriptionPage'
 import AboutPage from '../pages/AboutPage'
+import ContactPage from '../pages/ContactPage'
 
 const Page = () => {
   const location = useLocation()
@@ -19,6 +20,7 @@ const Page = () => {
         <Route path='/terms-conditions' component={TermsPage} />
         <Route path='/subscription' component={SubscriptionPage} />
         <Route path='/about_us' component={AboutPage} />
+        <Route path='/contact' component={ContactPage} />
       </Switch>
     </>
   )
