@@ -6,7 +6,7 @@ const homeDescription =
 const Description = () => {
   return (
     <section className='home__description'>
-      <img src={descriptionHome} alt='coffee' />
+      <img src={descriptionHome} alt='coffee' loading='lazy' />
       <p>{homeDescription}</p>
     </section>
   )

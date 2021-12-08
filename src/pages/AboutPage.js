@@ -10,9 +10,9 @@ const AboutPage = () => {
       <div className='container'>
         <h1 className='about__title'>About Us</h1>
         <Introduction />
-        <img className='about__img' src={ZuzaIMG} alt='zuza' />
+        <img className='about__img' src={ZuzaIMG} alt='zuza' loading='lazy' />
         <Info />
-        <img className='about__img' src={ArekIMG} alt='arek' />
+        <img className='about__img' src={ArekIMG} alt='arek' loading='lazy' />
       </div>
     </section>
   )

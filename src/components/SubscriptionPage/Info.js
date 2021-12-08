@@ -6,7 +6,7 @@ const Info = () => {
 
   return (
     <section className='subscription__info'>
-      <img src={subscriptionIMG} alt='coffee' />
+      <img src={subscriptionIMG} alt='coffee' loading='lazy' />
       <p>{subscriptionInfo}</p>
     </section>
   )
