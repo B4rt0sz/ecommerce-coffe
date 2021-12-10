@@ -1,14 +1,15 @@
 import Coffee from '../components/ShopPage/Coffee'
 import Merchandise from '../components/ShopPage/Merchandise'
 
-const ShopPage = () => {
+const ShopPage = ({ match }) => {
+  const url = match.url
   return (
     <section className='shop'>
       <div className='container'>
         <div className='shop__title'>Choose your product</div>
         <div className='shop__container'>
-          <Coffee />
-          <Merchandise />
+          <Coffee url={url} />
+          <Merchandise url={url} />
         </div>
       </div>
     </section>

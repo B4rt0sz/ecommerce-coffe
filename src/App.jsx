@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 
 import LoadingScreen from './layouts/LoadingScreen'
 import Header from './layouts/Header'
-import Page from './layouts/Page'
+import Router from './routes/Router'
 import Footer from './layouts/Footer'
 import ScrollToTopButton from './components/App/ScrollToTopButton'
 
@@ -13,19 +13,17 @@ function App() {
     setTimeout(() => setLoading(false), 500)
   }, [])
 
+  if (loading) {
+    return <LoadingScreen />
+  }
+
   return (
-    <>
-      {loading === false ? (
-        <div className='wrapper'>
-          <Header />
-          <Page />
-          <Footer />
-          <ScrollToTopButton />
-        </div>
-      ) : (
-        <LoadingScreen />
-      )}
-    </>
+    <div className='wrapper'>
+      <Header />
+      <Router />
+      <Footer />
+      <ScrollToTopButton />
+    </div>
   )
 }
 

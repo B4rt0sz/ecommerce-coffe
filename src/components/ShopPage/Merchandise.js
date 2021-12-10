@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom'
+import { Link, useRouteMatch } from 'react-router-dom'
 import merchandiseIMG from '../../../public/images/shopMerchandise.jpg'
 
-const Merchandise = () => {
+const Merchandise = ({ url }) => {
   return (
     <div className='shop__merchandise'>
-      <Link to='/products/merchandise'>
+      <Link to={`${url}/merchandise`}>
         <img
           className='shop__merchandise-img'
           src={merchandiseIMG}

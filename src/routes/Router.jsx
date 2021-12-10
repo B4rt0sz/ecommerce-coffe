@@ -8,14 +8,14 @@ import SubscriptionPage from '../pages/SubscriptionPage'
 import AboutPage from '../pages/AboutPage'
 import ContactPage from '../pages/ContactPage'
 
-const Page = () => {
+const Router = () => {
   const location = useLocation()
 
   return (
     <>
       <Switch location={location} key={location.key}>
         <Route path='/' exact component={HomePage} />
-        <Route path='/shop' component={ShopPage} />
+        <Route path='/shop' exact component={ShopPage} />
         <Route path='/privacy-policy' component={PrivacyPage} />
         <Route path='/terms-conditions' component={TermsPage} />
         <Route path='/subscription' component={SubscriptionPage} />
@@ -26,4 +26,4 @@ const Page = () => {
   )
 }
 
-export default Page
+export default Router
