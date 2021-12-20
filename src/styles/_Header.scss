@@ -20,7 +20,15 @@
     }
 
     &-item {
-      font-size: 1.8em;
+      font-size: 1.2em;
+
+      @media (min-width: 620px) {
+        font-size: 1.4em;
+      }
+
+      @media (min-width: 764px) {
+        font-size: 1.8em;
+      }
 
       a {
         margin: 0.2em;

@@ -20,4 +20,5 @@ const useMediaQuery = (query) => {
 
 export default useMediaQuery
 
-export const useIsMobile = () => useMediaQuery('(max-width: 765px)')
+export const useIsMobile = () =>
+  useMediaQuery('(orientation: portrait) and (max-width: 765px)')
