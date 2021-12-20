@@ -1,4 +1,4 @@
-import { Link, useRouteMatch } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import merchandiseIMG from '../../../public/images/shopMerchandise.jpg'
 
 const Merchandise = ({ url }) => {

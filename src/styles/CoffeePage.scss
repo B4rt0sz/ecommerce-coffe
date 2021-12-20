@@ -1,0 +1,157 @@
+.coffee {
+  @include General;
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__header {
+    width: 100%;
+
+    &-title {
+      @include MainTitle;
+      margin: 20px 0;
+    }
+
+    &-search {
+      padding: 20px 0;
+      margin: 20px 0;
+    }
+  }
+
+  &__product {
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+
+      @media (min-width: 568px) {
+        justify-content: space-between;
+        justify-content: space-around;
+      }
+
+      &-item {
+        position: relative;
+        margin-bottom: 20px;
+        overflow: hidden;
+        border-radius: 10px;
+
+        @media (min-width: 568px) {
+          width: 48%;
+        }
+
+        @media (min-width: 1280px) {
+          width: 31%;
+        }
+
+        a {
+          cursor: default;
+          color: $WhiteColor;
+        }
+
+        @media (pointer: fine) {
+          &:hover &-container {
+            height: 150px;
+          }
+
+          &:hover &-img {
+            transform: scale(1.1);
+            filter: brightness(80%);
+          }
+
+          &:hover &-flavor {
+            opacity: 1;
+            visibility: visible;
+            transition-delay: 0.4s;
+          }
+
+          &:hover &-price {
+            opacity: 1;
+            visibility: visible;
+            transition-delay: 0.6s;
+          }
+
+          &:hover &-btn {
+            opacity: 1;
+            transform: translateY(0px);
+            transition-delay: 0.65s;
+          }
+        }
+
+        &-img {
+          display: block;
+          width: 100%;
+          transition: 0.5s ease;
+        }
+
+        &-container {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          top: 0;
+          width: 100%;
+          height: 90px;
+          text-align: center;
+          background-color: rgba(0, 0, 0, 0.6);
+
+          @media (pointer: fine) {
+            top: auto;
+            bottom: 0;
+            height: 50px;
+            transition: 1s;
+          }
+        }
+
+        &-title {
+          @include MobileTitle;
+          margin-top: 4px;
+        }
+
+        &-flavor {
+          @media (pointer: fine) {
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.5s ease;
+          }
+        }
+
+        &-price {
+          margin-top: 8px;
+          font-size: 1.8em;
+
+          @media (pointer: fine) {
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.5s ease;
+          }
+        }
+
+        &-btn {
+          align-self: center;
+          display: none;
+          max-width: 76.47px;
+          -webkit-appearance: none;
+          margin: 10px 0;
+          padding: 10px 10px;
+          font-size: 1.2em;
+          text-decoration: none;
+          border: none;
+          border-radius: 6px;
+          background-color: $TextGoldColor;
+          cursor: pointer;
+
+          @media (pointer: fine) {
+            display: block;
+            transform: translateY(150px);
+            transition: 0.5s;
+          }
+
+          &:hover {
+            background-color: $DarkGoldColor;
+          }
+        }
+      }
+    }
+  }
+}
