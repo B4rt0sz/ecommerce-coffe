@@ -1,0 +1,316 @@
+.coffeeProduct {
+  @include General;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #282828;
+    max-width: 1024px;
+
+    @media (min-width: 1024px) and (min-height: 1135px) {
+      border-radius: 10px;
+    }
+
+    @media (min-width: 568px) {
+      justify-content: space-around;
+    }
+  }
+
+  &__gallery {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    max-height: 781px;
+    padding: 8px;
+
+    @media (min-width: 568px) {
+      width: 49%;
+      padding: 16px;
+    }
+
+    &-mainImg {
+      margin-bottom: 16px;
+      border-radius: 10px;
+      align-self: center;
+      overflow: hidden;
+      border: 2px solid $GoldIcon;
+
+      @media (min-width: 768px) {
+        border: 3px solid $GoldIcon;
+      }
+    }
+
+    &-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .active {
+        border: 2px solid $GoldIcon;
+      }
+
+      img {
+        width: 22.5%;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 450px;
+    padding: 8px;
+
+    @media (min-width: 568px) {
+      width: 49%;
+      padding: 16px;
+    }
+
+    &-title {
+      @include MobileTitle;
+
+      @media (min-width: 390px) {
+        font-size: 2.4em;
+      }
+
+      @media (min-width: 764px) {
+        font-size: 3.1em;
+      }
+
+      @media (min-width: 834px) {
+        font-size: 3.4em;
+      }
+    }
+
+    &-flavor {
+      margin-bottom: 8px;
+      text-align: center;
+
+      @media (min-width: 360px) {
+        font-size: 1.2em;
+      }
+
+      @media (min-width: 390px) {
+        font-size: 1.4em;
+      }
+    }
+
+    &-price {
+      text-align: center;
+      font-size: 1.4em;
+      font-weight: 500;
+
+      @media (min-width: 360px) {
+        font-size: 1.6em;
+      }
+
+      @media (min-width: 764px) {
+        font-size: 1.8em;
+      }
+    }
+
+    &-info {
+      margin: 8px 0 8px 0;
+
+      @media (min-width: 764px) {
+        margin: 16px 0 16px 0;
+      }
+
+      ul {
+        margin-bottom: 8px;
+        font-size: 1.1em;
+
+        @media (min-width: 764px) {
+          font-size: 1.4em;
+        }
+
+        li {
+          margin-bottom: 2px;
+
+          span {
+            font-weight: 500;
+          }
+        }
+      }
+
+      p {
+        font-size: 1.2em;
+        text-align: justify;
+
+        &:first-of-type {
+          margin-bottom: 8px;
+
+          @media (min-width: 764px) {
+            margin-bottom: 16px;
+          }
+        }
+
+        @media (min-width: 764px) {
+          font-size: 1.6em;
+        }
+      }
+    }
+
+    &-size {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      justify-items: center;
+      margin: 8px 0 8px 0;
+      font-size: 1.4em;
+
+      @media (min-width: 764px) {
+        font-size: 1.8em;
+      }
+
+      h3 {
+        width: 100%;
+        margin-bottom: 8px;
+        font-weight: 500;
+        text-align: center;
+      }
+
+      button {
+        -webkit-appearance: none;
+        margin: 10px 0;
+        padding: 10px 16px;
+        background-color: transparent;
+        border: 1px solid $TextGoldColor;
+        border-radius: 4px;
+        color: $WhiteColor;
+        cursor: pointer;
+
+        &.active {
+          background-color: $TextGoldColor;
+          color: $BlackColor;
+        }
+      }
+    }
+
+    &-purchase {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 8px 0 8px 0;
+      font-size: 1.4em;
+
+      @media (min-width: 764px) {
+        margin: 16px 0 16px 0;
+        font-size: 1.8em;
+      }
+
+      h3 {
+        font-weight: 500;
+      }
+
+      &-subscribe {
+        padding: 20px;
+
+        &:nth-child(3) {
+          border-top: 1px solid rgba(239, 239, 239, 0.3);
+        }
+
+        label {
+          display: block;
+          position: relative;
+          padding-left: 32px;
+          cursor: pointer;
+
+          input[type='radio'] {
+            display: none;
+          }
+
+          .customDot {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background-color: #282828;
+            border: 2px solid $TextGoldColor;
+          }
+
+          .customDot:after {
+            content: '';
+            position: absolute;
+            display: none;
+          }
+
+          input:checked ~ .customDot:after {
+            display: block;
+          }
+
+          & .customDot:after {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: $TextGoldColor;
+          }
+        }
+      }
+
+      &-subscribeOption {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        label {
+          select {
+            padding: 6px 8px;
+            margin-bottom: 16px;
+            background-color: #282828;
+            color: $WhiteColor;
+            border: 1px solid $TextGoldColor;
+
+            &:hover {
+              border: 1px solid $DarkGoldColor;
+            }
+
+            &:focus {
+              outline: none;
+            }
+          }
+        }
+
+        p {
+          text-align: justify;
+          font-size: 10px;
+          line-height: 1.2em;
+
+          @media (min-width: 360px) {
+            font-size: 12px;
+          }
+
+          @media (min-width: 764px) {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    &-btn {
+      @include Button;
+      transition: 0.3s;
+
+      &:hover {
+        background-color: $DarkGoldColor;
+      }
+    }
+  }
+}

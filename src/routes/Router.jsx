@@ -8,9 +8,9 @@ import SubscriptionPage from '../pages/SubscriptionPage'
 import AboutPage from '../pages/AboutPage'
 import ContactPage from '../pages/ContactPage'
 import CoffeePage from '../pages/CoffeePage'
-// import CoffeeProductPage from '../pages/CoffeeProductPage'
+import CoffeeProductPage from '../pages/CoffeeProductPage'
 import MerchandisePage from '../pages/MerchandisePage'
-// import MerchandiseProductPage from '../pages/MerchandiseProductPage'
+import MerchandiseProductPage from '../pages/MerchandiseProductPage'
 
 const Router = () => {
   const location = useLocation()
@@ -21,12 +21,12 @@ const Router = () => {
         <Route path='/' exact component={HomePage} />
         <Route path='/shop' exact component={ShopPage} />
         <Route path='/shop/coffee' exact component={CoffeePage} />
-        {/* <Route path='/shop/coffee/:id' component={CoffeeProductPage} /> */}
+        <Route path='/shop/coffee/:id' component={CoffeeProductPage} />
         <Route path='/shop/merchandise' exact component={MerchandisePage} />
-        {/* <Route
+        <Route
           path='/shop/merchandise/:id'
           component={MerchandiseProductPage}
-        /> */}
+        />
         <Route path='/privacy-policy' component={PrivacyPage} />
         <Route path='/terms-conditions' component={TermsPage} />
         <Route path='/subscription' component={SubscriptionPage} />
