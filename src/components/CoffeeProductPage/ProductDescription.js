@@ -1,69 +1,70 @@
 import { useState } from 'react'
 
-const ProductDescription = ({ products }) => {
+const ProductDescription = ({ data, id }) => {
+  const coffeeData = data.find((coffee) => coffee.url === id)
   const [size, setSize] = useState(250)
   const [selectedPurchase, setSelectedPurchase] = useState('oneTime')
   const [selectedSubscription, setSelectedSubscription] = useState('3months')
   const [isShippingFree, setIsShippingFree] = useState('no')
 
   const isPurchaseSelected = (value) => selectedPurchase === value
-  const productTitle = products.title
-  const productFlavor = products.flavor
+  const productTitle = coffeeData.title
+  const productFlavor = coffeeData.flavor
   let subscriptionText
   let currentPrice = 16
 
   if (size === 250 && selectedPurchase === 'oneTime')
-    currentPrice = products.price250g
+    currentPrice = coffeeData.price250g
   else if (
     size === 250 &&
     selectedPurchase === 'subscribe' &&
     selectedSubscription === '3months'
   )
-    currentPrice = products.price250g * 3
+    currentPrice = coffeeData.price250g * 3
   else if (
     size === 250 &&
     selectedPurchase === 'subscribe' &&
     selectedSubscription === '6months'
   )
-    currentPrice = products.price250g * 5
+    currentPrice = coffeeData.price250g * 5
   else if (
     size === 250 &&
     selectedPurchase === 'subscribe' &&
     selectedSubscription === '12months'
   )
-    currentPrice = products.price250g * 10
+    currentPrice = coffeeData.price250g * 10
   else if (
     size === 250 &&
     selectedPurchase === 'subscribe' &&
     selectedSubscription === '24months'
   )
-    currentPrice = products.price250g * 21
+    currentPrice = coffeeData.price250g * 21
   else if (size === 500 && selectedPurchase === 'oneTime')
-    currentPrice = products.price500g
+    currentPrice = coffeeData.price500g
   else if (
     size === 500 &&
     selectedPurchase === 'subscribe' &&
     selectedSubscription === '3months'
   )
-    currentPrice = products.price500g * 3
+    currentPrice = coffeeData.price500g * 3
   else if (
     size === 500 &&
     selectedPurchase === 'subscribe' &&
     selectedSubscription === '6months'
   )
-    currentPrice = products.price500g * 5
+    currentPrice = coffeeData.price500g * 5
   else if (
     size === 500 &&
     selectedPurchase === 'subscribe' &&
     selectedSubscription === '12months'
   )
-    currentPrice = products.price500g * 10
+    currentPrice = coffeeData.price500g * 10
   else if (
     size === 500 &&
     selectedPurchase === 'subscribe' &&
     selectedSubscription === '24months'
   )
-    currentPrice = products.price500g * 21
+    currentPrice = coffeeData.price500g * 21
 
   const smallSize = () => {
     setSize(250)
@@ -120,24 +121,27 @@ const ProductDescription = ({ products }) => {
     </div>
   )
 
+  const description = coffeeData.description.map((info, index) => (
+    <p key={index}>{info}</p>
+  ))
+
   const descriptionInfo = (
     <>
       <ul>
         <li>
-          <span>Region:</span> {products.region}
+          <span>Region:</span> {coffeeData.region}
         </li>
         <li>
-          <span>Variety:</span> {products.variety}
+          <span>Variety:</span> {coffeeData.variety}
         </li>
         <li>
-          <span>Roast level:</span> {products.roast}
+          <span>Roast level:</span> {coffeeData.roast}
         </li>
         <li>
-          <span>SCA Score:</span> {products.scaScroe}
+          <span>SCA Score:</span> {coffeeData.scaScroe}
         </li>
       </ul>
-      <p>{products.description1}</p>
-      <p>{products.description2}</p>
+      {description}
     </>
   )
 

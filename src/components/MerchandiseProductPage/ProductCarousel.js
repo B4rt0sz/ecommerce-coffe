@@ -2,10 +2,10 @@ import { useState } from 'react'
 import ReactImageMagnify from 'react-image-magnify'
 
 const ProductCarousel = ({ data, id }) => {
-  const coffeeData = data.find((coffee) => coffee.url === id)
-  const [selectedImg, setSelectedImg] = useState(coffeeData.images[0])
+  const merchandiseData = data.find((merchandise) => merchandise.url === id)
+  const [selectedImg, setSelectedImg] = useState(merchandiseData.images[0])
 
-  const imageGallery = coffeeData.images.map((img, index) => (
+  const imageGallery = merchandiseData.images.map((img, index) => (
     <img
       key={index}
       src={img}
@@ -22,29 +22,31 @@ const ProductCarousel = ({ data, id }) => {
     <ReactImageMagnify
       {...{
         smallImage: {
-          alt: 'coffee',
+          alt: 'merchandise',
           isFluidWidth: true,
           src: selectedImg,
         },
         largeImage: {
-          alt: 'coffee',
+          alt: 'merchandise',
           src: selectedImg,
-          width: 900,
-          height: 1350,
+          width: 700,
+          height: 700,
         },
       }}
       imageStyle={{ height: '100%' }}
       enlargedImagePosition='over'
       isEnlargedImagePortalEnabledForTouch={true}
-      className='coffeeProduct__gallery-mainImg-small'
+      className='merchandiseProduct__gallery-mainImg-small'
     />
   )
 
   return (
-    <div className='coffeeProduct__gallery'>
-      <div className='coffeeProduct__gallery-mainImg'>{imageMagnify}</div>
-      <div className='coffeeProduct__gallery-container'>{imageGallery}</div>
-      <div className='coffeeProduct__gallery-zoom'></div>
+    <div className='merchandiseProduct__gallery'>
+      <div className='merchandiseProduct__gallery-mainImg'>{imageMagnify}</div>
+      <div className='merchandiseProduct__gallery-container'>
+        {imageGallery}
+      </div>
+      <div className='merchandiseProduct__gallery-zoom'></div>
     </div>
   )
 }
