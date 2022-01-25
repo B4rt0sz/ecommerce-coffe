@@ -1,12 +1,23 @@
 import { NavLink, useLocation } from 'react-router-dom'
 import { useIsMobile } from '../../hooks/useMediaQuery'
+import { IoCartOutline } from 'react-icons/io5'
 
-const NavLinks = ({ closeMobileMenu }) => {
+const NavLinks = ({ closeMobileMenu, length }) => {
   const isMobile = useIsMobile()
   const location = useLocation()
 
   const classList = isMobile ? 'header__menuMobile-list' : 'header__menu-list'
   const classItem = isMobile ? 'header__menuMobile-item' : 'header__menu-item'
+  const cartClass = isMobile ? 'header__menuMobile-cart' : 'header__menu-cart'
+
+  const cart = !isMobile ? (
+    <div className={cartClass}>
+      <NavLink to='/cart'>
+        <IoCartOutline />
+        {length ? <span>{length}</span> : null}
+      </NavLink>
+    </div>
+  ) : null
 
   const isCurrentURL = (url) => {
     return location.pathname.toLowerCase() === url.toLowerCase()
@@ -38,7 +49,14 @@ const NavLinks = ({ closeMobileMenu }) => {
         </li>
       )
   )
-  return <ul className={classList}>{menu}</ul>
+  return (
+    <>
+      <ul className={classList}>
+        {menu}
+        {cart}
+      </ul>
+    </>
+  )
 }
 
 export default NavLinks

@@ -48,6 +48,7 @@ $GoldIcon: #be9758;
   font-size: 1.2em;
   line-height: 1.2em;
 }
+
 @mixin TextDesktop {
   font-size: 1.6em;
   line-height: 1.4em;
@@ -65,6 +66,32 @@ $GoldIcon: #be9758;
   border-radius: 4px;
   color: $BlackColor;
   cursor: pointer;
+}
+
+@mixin Cart {
+  font-size: 2.4em;
+
+  a {
+    position: relative;
+    display: flex;
+    margin-left: 0.5em;
+    color: $BlackColor;
+
+    span {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: -6px;
+      right: -8px;
+      font-size: 11px;
+      width: 18px;
+      height: 18px;
+      color: $DarkGoldColor;
+      background-color: $BlackColor;
+      border-radius: 50%;
+    }
+  }
 }
 
 @mixin PrivacyGeneral {

@@ -1,70 +1,85 @@
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../../store/slices/cartSlice'
 
 const ProductDescription = ({ data, id }) => {
   const coffeeData = data.find((coffee) => coffee.url === id)
   const [size, setSize] = useState(250)
-  const [selectedPurchase, setSelectedPurchase] = useState('oneTime')
-  const [selectedSubscription, setSelectedSubscription] = useState('3months')
-  const [isShippingFree, setIsShippingFree] = useState('no')
+  const [selectedPurchase, setSelectedPurchase] = useState('one-time')
+  const [selectedSubscription, setSelectedSubscription] = useState('3 months')
+  const [freeShipping, setFreeShipping] = useState(false)
+  const dispatch = useDispatch()
 
   const isPurchaseSelected = (value) => selectedPurchase === value
   const productTitle = coffeeData.title
   const productFlavor = coffeeData.flavor
   let subscriptionText
   let currentPrice = 16
+  let idSuffix = ''
 
-  if (size === 250 && selectedPurchase === 'oneTime')
+  if (size === 250 && selectedPurchase === 'one-time') {
     currentPrice = coffeeData.price250g
-  else if (
+    idSuffix = 'o250'
+  } else if (
     size === 250 &&
-    selectedPurchase === 'subscribe' &&
-    selectedSubscription === '3months'
-  )
+    selectedPurchase === 'subscription' &&
+    selectedSubscription === '3 months'
+  ) {
     currentPrice = coffeeData.price250g * 3
-  else if (
+    idSuffix = 's2503'
+  } else if (
     size === 250 &&
-    selectedPurchase === 'subscribe' &&
-    selectedSubscription === '6months'
-  )
+    selectedPurchase === 'subscription' &&
+    selectedSubscription === '6 months'
+  ) {
     currentPrice = coffeeData.price250g * 5
-  else if (
+    idSuffix = 's2506'
+  } else if (
     size === 250 &&
-    selectedPurchase === 'subscribe' &&
-    selectedSubscription === '12months'
-  )
+    selectedPurchase === 'subscription' &&
+    selectedSubscription === '12 months'
+  ) {
     currentPrice = coffeeData.price250g * 10
-  else if (
+    idSuffix = 's25012'
+  } else if (
     size === 250 &&
-    selectedPurchase === 'subscribe' &&
-    selectedSubscription === '24months'
-  )
+    selectedPurchase === 'subscription' &&
+    selectedSubscription === '24 months'
+  ) {
     currentPrice = coffeeData.price250g * 21
-  else if (size === 500 && selectedPurchase === 'oneTime')
+    idSuffix = 's25024'
+  } else if (size === 500 && selectedPurchase === 'one-time') {
     currentPrice = coffeeData.price500g
-  else if (
+    idSuffix = 'o500'
+  } else if (
     size === 500 &&
-    selectedPurchase === 'subscribe' &&
-    selectedSubscription === '3months'
-  )
+    selectedPurchase === 'subscription' &&
+    selectedSubscription === '3 months'
+  ) {
     currentPrice = coffeeData.price500g * 3
-  else if (
+    idSuffix = 's5003'
+  } else if (
     size === 500 &&
-    selectedPurchase === 'subscribe' &&
-    selectedSubscription === '6months'
-  )
+    selectedPurchase === 'subscription' &&
+    selectedSubscription === '6 months'
+  ) {
     currentPrice = coffeeData.price500g * 5
-  else if (
+    idSuffix = 's5006'
+  } else if (
     size === 500 &&
-    selectedPurchase === 'subscribe' &&
-    selectedSubscription === '12months'
-  )
+    selectedPurchase === 'subscription' &&
+    selectedSubscription === '12 months'
+  ) {
     currentPrice = coffeeData.price500g * 10
-  else if (
+    idSuffix = 's50012'
+  } else if (
     size === 500 &&
-    selectedPurchase === 'subscribe' &&
-    selectedSubscription === '24months'
-  )
+    selectedPurchase === 'subscription' &&
+    selectedSubscription === '24 months'
+  ) {
     currentPrice = coffeeData.price500g * 21
+    idSuffix = 's50024'
+  }
 
   const smallSize = () => {
     setSize(250)
@@ -76,13 +91,13 @@ const ProductDescription = ({ data, id }) => {
 
   const handlePurchaseOption = (e) => {
     const value = e.target.value
-    if (value === 'oneTime') {
+    if (value === 'one-time') {
       setSelectedPurchase(e.target.value)
-      setIsShippingFree('no')
-      setSelectedSubscription('3months')
+      setFreeShipping(false)
+      setSelectedSubscription('3 months')
     } else {
       setSelectedPurchase(e.target.value)
-      setIsShippingFree('yes')
+      setFreeShipping(true)
     }
   }
 
@@ -90,12 +105,12 @@ const ProductDescription = ({ data, id }) => {
     setSelectedSubscription(e.target.value)
   }
 
-  if (selectedSubscription === '3months')
+  if (selectedSubscription === '3 months')
     subscriptionText = 'Your subscription will include free shipping.'
-  else if (selectedSubscription === '6months')
+  else if (selectedSubscription === '6 months')
     subscriptionText =
       'Your subscription will include free shipping and a one month free.'
-  else if (selectedSubscription === '12months')
+  else if (selectedSubscription === '12 months')
     subscriptionText =
       'Your subscription will include free shipping and a two months free.'
   else
@@ -111,10 +126,10 @@ const ProductDescription = ({ data, id }) => {
           value={selectedSubscription}
           onChange={handleSubscriptionOption}
         >
-          <option value='3months'>3-month plan</option>
-          <option value='6months'>6-month plan</option>
-          <option value='12months'>12-month plan</option>
-          <option value='24months'>24-month plan</option>
+          <option value='3 months'>3-month plan</option>
+          <option value='6 months'>6-month plan</option>
+          <option value='12 months'>12-month plan</option>
+          <option value='24 months'>24-month plan</option>
         </select>
       </label>
       <p>{subscriptionText}</p>
@@ -161,12 +176,12 @@ const ProductDescription = ({ data, id }) => {
     <>
       <h3>Type of Purchase:</h3>
       <div className='coffeeProduct__description-purchase-subscribe'>
-        <label htmlFor='oneTime'>
+        <label htmlFor='one-time'>
           <input
             type='radio'
-            id='oneTime'
-            value='oneTime'
-            checked={isPurchaseSelected('oneTime')}
+            id='one-time'
+            value='one-time'
+            checked={isPurchaseSelected('one-time')}
             onChange={handlePurchaseOption}
           />
           One time
@@ -174,21 +189,37 @@ const ProductDescription = ({ data, id }) => {
         </label>
       </div>
       <div className='coffeeProduct__description-purchase-subscribe'>
-        <label htmlFor='subscribe'>
+        <label htmlFor='subscription'>
           <input
             type='radio'
-            id='subscribe'
-            value='subscribe'
-            checked={isPurchaseSelected('subscribe')}
+            id='subscription'
+            value='subscription'
+            checked={isPurchaseSelected('subscription')}
             onChange={handlePurchaseOption}
           />
           Subscribe and Save!
           <span className='customDot'></span>
         </label>
       </div>
-      {selectedPurchase === 'subscribe' ? subscribeOption : null}
+      {selectedPurchase === 'subscription' ? subscribeOption : null}
     </>
   )
+
+  const handleAddToCart = () => {
+    const product = {
+      id: coffeeData._id + idSuffix,
+      title: productTitle,
+      category: coffeeData.category,
+      image: coffeeData.images[0],
+      size: size,
+      purchaseType: selectedPurchase,
+      subscription: selectedSubscription,
+      freeShipping: freeShipping,
+      price: currentPrice,
+    }
+
+    dispatch(addToCart(product))
+  }
 
   return (
     <div className='coffeeProduct__description'>
@@ -204,7 +235,12 @@ const ProductDescription = ({ data, id }) => {
         {descriptionPurchase}
       </div>
 
-      <button className='coffeeProduct__description-btn'>Add to Cart</button>
+      <button
+        className='coffeeProduct__description-btn'
+        onClick={handleAddToCart}
+      >
+        Add to Cart
+      </button>
     </div>
   )
 }

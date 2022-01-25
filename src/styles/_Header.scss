@@ -43,9 +43,17 @@
         }
       }
     }
+
+    &-cart {
+      @include Cart;
+    }
   }
 
   &__hamburger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     &-icon {
       font-size: 4em;
       color: $BlackColor;
@@ -87,6 +95,10 @@
           background-color: $LightGoldColor;
         }
       }
+    }
+
+    &-cart {
+      @include Cart;
     }
   }
 }

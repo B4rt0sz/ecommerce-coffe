@@ -36,7 +36,7 @@ import fellowStaggKettleImg from '../../public/images/merchandise/fellowStaggKet
 const data = {
   coffee: [
     {
-      _id: 1,
+      _id: 'c1',
       url: 'murue-kavutiri-kenia',
       title: 'Murue Kavutiri | Kenia',
       flavor: 'wild rose | buckwheat honey | rhubarb',
@@ -59,7 +59,7 @@ const data = {
       price500g: 30,
     },
     {
-      _id: 2,
+      _id: 'c2',
       url: 'la-joya-salwador',
       title: 'La Joya | Salwador',
       flavor: 'cranberries | hazelnut | dessert chocolate',
@@ -77,7 +77,7 @@ const data = {
       price500g: 24,
     },
     {
-      _id: 3,
+      _id: 'c3',
       url: 'serato-brazylia',
       title: 'Sertão | Brazylia',
       flavor: 'dried plum | dessert chocolate | roasted almonds',
@@ -95,7 +95,7 @@ const data = {
       price500g: 18,
     },
     {
-      _id: 4,
+      _id: 'c4',
       url: 'jinotega-nikaragua',
       title: 'Jinotega | Nikaragua',
       flavor: 'red apple | cardamom | cocoa',
@@ -113,7 +113,7 @@ const data = {
       price500g: 20,
     },
     {
-      _id: 5,
+      _id: 'c5',
       url: 'ngila-tanzania',
       title: 'Ngila | Tanzania',
       flavor: 'pink grapefruit | cedar | caramel',
@@ -133,10 +133,11 @@ const data = {
   ],
   merchandise: [
     {
-      _id: 1,
+      _id: 'm1',
       url: 'bialetti-moka-express-150-ml',
       images: [bialettiMokaExpress150Img],
       title: 'Bialetti Moka Express 150ml',
+      category: 'merchandise',
       description: [
         'Durable aluminum body.',
         'Up to three cups of espresso at the same time - total capacity: 150 ml.',
@@ -146,10 +147,11 @@ const data = {
       price: 27,
     },
     {
-      _id: 2,
+      _id: 'm2',
       url: 'hario-v60-02-dripper',
       images: [hariov6002Img],
       title: 'Hario v60-02 Dripper',
+      category: 'merchandise',
       description: [
         'Ceramic dripper.',
         'Conical form with grooves for perfect water flow.',
@@ -160,10 +162,11 @@ const data = {
       price: 24,
     },
     {
-      _id: 3,
+      _id: 'm3',
       url: 'hario-range-server-v60-02',
       images: [harioRangeServerV6002Img],
       title: 'Hario Range Server v60-02',
+      category: 'merchandise',
       description: [
         'Jug made of Japanese, high-temperature glass.',
         'Perfect with the Hario V60-02 dripper.',
@@ -173,10 +176,11 @@ const data = {
       price: 29,
     },
     {
-      _id: 4,
+      _id: 'm4',
       url: 'bialetti-venus-300-ml',
       images: [bialettiVenusImg],
       title: 'Bialetti Venus 300ml',
+      category: 'merchandise',
       description: [
         'Polished stainless steel body.',
         'Up to six cups of espresso at the same time - total capacity: 300 ml.',
@@ -187,10 +191,11 @@ const data = {
       price: 39,
     },
     {
-      _id: 5,
+      _id: 'm5',
       url: 'hario-v60-02-misarashi-filters',
       images: [filterHarioV6002Img],
       title: 'Hario v60-02 Misarashi',
+      category: 'merchandise',
       description: [
         'Made of unbleached paper.',
         'Perfect for the Hario V60-02 dripper.',
@@ -199,10 +204,11 @@ const data = {
       price: 8,
     },
     {
-      _id: 6,
+      _id: 'm6',
       url: 'hario-tea-press-olive-wood-300-ml',
       images: [harioTeaPressImg],
       title: 'Hario Tea Press 300ml',
+      category: 'merchandise',
       description: [
         'Stainless steel, olive wood and Japanese glass.',
         'Modern design.',
@@ -212,10 +218,11 @@ const data = {
       price: 44,
     },
     {
-      _id: 7,
+      _id: 'm7',
       url: 'tamper-motta',
       images: [temperMottaImg],
       title: 'Temper Motta',
+      category: 'merchandise',
       description: [
         'Flat stainless steel base.',
         'Contoured wooden handle.',
@@ -224,10 +231,11 @@ const data = {
       price: 27,
     },
     {
-      _id: 8,
+      _id: 'm8',
       url: 'bialetti-french-press-signature-1000-ml',
       images: [bialettiFrenchPress1000Img],
       title: 'Bialetti French Press Signature 1000ml',
+      category: 'merchandise',
       description: [
         '18/10 stainless steel, glass and plastic.',
         'Classic design.',
@@ -238,10 +246,11 @@ const data = {
       price: 33,
     },
     {
-      _id: 9,
+      _id: 'm9',
       url: 'bialetti-moka-express-300-ml',
       images: [bialettiMokaExpress300Img],
       title: 'Bialetti Moka Express 300ml',
+      category: 'merchandise',
       description: [
         'Durable aluminum body.',
         'Up to six cups of espresso at the same time - total capacity: 300 ml.',
@@ -251,10 +260,11 @@ const data = {
       price: 36,
     },
     {
-      _id: 10,
+      _id: 'm10',
       url: 'bialetti-french-press-signature-350-ml',
       images: [bialettiFrenchPress350Img],
       title: 'Bialetti French Press Signature 350ml',
+      category: 'merchandise',
       description: [
         '18/10 stainless steel, glass and plastic.',
         'Classic design.',
@@ -265,10 +275,11 @@ const data = {
       price: 26,
     },
     {
-      _id: 11,
+      _id: 'm11',
       url: 'barista-space-hand-grinder-silver',
       images: [baristaSpaceImg],
       title: 'Barista Space Hand Grinder',
+      category: 'merchandise',
       description: [
         'Stable burrs made of stainless steel.',
         'Greater grinding precision and even grinding compared to ceramic burr mills.',
@@ -282,10 +293,11 @@ const data = {
       price: 97,
     },
     {
-      _id: 12,
+      _id: 'm12',
       url: 'fellow-stagg-kettle-white',
       images: [fellowStaggKettleImg],
       title: 'Fellow Stagg Kettle',
+      category: 'merchandise',
       description: [
         'Stainless steel body and cover.',
         'Weighted handle for increased stability while pouring.',

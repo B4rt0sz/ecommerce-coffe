@@ -11,6 +11,7 @@ import CoffeePage from '../pages/CoffeePage'
 import CoffeeProductPage from '../pages/CoffeeProductPage'
 import MerchandisePage from '../pages/MerchandisePage'
 import MerchandiseProductPage from '../pages/MerchandiseProductPage'
+import CartPage from '../pages/CartPage'
 
 const Router = () => {
   const location = useLocation()
@@ -32,6 +33,7 @@ const Router = () => {
         <Route path='/subscription' component={SubscriptionPage} />
         <Route path='/about_us' component={AboutPage} />
         <Route path='/contact' component={ContactPage} />
+        <Route path='/cart' component={CartPage} />
       </Switch>
     </>
   )

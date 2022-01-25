@@ -1,20 +1,34 @@
+import { NavLink } from 'react-router-dom'
+import { useDisableBodyScroll } from '../../hooks/useDisableBodyScroll'
+import { useIsMobile } from '../../hooks/useMediaQuery'
+import useToggle from '../../hooks/useToggle'
+import NavLinks from './NavLinks'
 import { AnimatePresence, motion } from 'framer-motion'
 import { IoMenuOutline, IoCloseOutline } from 'react-icons/io5'
-import useToggle from '../../hooks/useToggle'
-import { useDisableBodyScroll } from '../../hooks/useDisableBodyScroll'
+import { IoCartOutline } from 'react-icons/io5'
 
-import NavLinks from './NavLinks'
-
-const MobileNavigation = () => {
+const MobileNavigation = ({ length }) => {
+  const isMobile = useIsMobile()
   const [isOpen, toggleIsOpen] = useToggle(false)
   const closeMobileMenu = () => toggleIsOpen((isOpen) => !isOpen)
   useDisableBodyScroll(isOpen)
 
   const menuIcon = !isOpen ? (
-    <IoMenuOutline className='header__hamburger-icon' />
+    <IoMenuOutline className='header__hamburger-icon' onClick={toggleIsOpen} />
   ) : (
-    <IoCloseOutline className='header__hamburger-icon' />
+    <IoCloseOutline className='header__hamburger-icon' onClick={toggleIsOpen} />
   )
+
+  const cartClass = isMobile ? 'header__menuMobile-cart' : 'header__menu-cart'
+
+  const cart = isMobile ? (
+    <div className={cartClass}>
+      <NavLink to='/cart'>
+        <IoCartOutline />
+        {length ? <span>{length}</span> : null}
+      </NavLink>
+    </div>
+  ) : null
 
   const navVariant = {
     initial: {
@@ -40,8 +54,9 @@ const MobileNavigation = () => {
 
   return (
     <>
-      <div className='header__hamburger' onClick={toggleIsOpen}>
+      <div className='header__hamburger'>
         {menuIcon}
+        {cart}
       </div>
       <AnimatePresence>
         {isOpen && (
@@ -52,7 +67,7 @@ const MobileNavigation = () => {
             animate={'animate'}
             exit={'exit'}
           >
-            {<NavLinks closeMobileMenu={closeMobileMenu} />}
+            {<NavLinks closeMobileMenu={closeMobileMenu} length={length} />}
           </motion.nav>
         )}
       </AnimatePresence>
