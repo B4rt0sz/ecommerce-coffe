@@ -13,6 +13,7 @@ import MerchandisePage from '../pages/MerchandisePage'
 import MerchandiseProductPage from '../pages/MerchandiseProductPage'
 import CartPage from '../pages/CartPage'
 import LoginPage from '../pages/LoginPage'
+import ForgotPage from '../pages/ForgotPage'
 
 import { useSelector } from 'react-redux'
 import { isUserLogged } from '../store/slices/userSlice'
@@ -40,6 +41,7 @@ const Router = () => {
         <Route path='/contact' component={ContactPage} />
         <Route path='/cart' component={CartPage} />
         {!showMenu ? <Route path='/login' component={LoginPage} /> : null}
+        {!showMenu ? <Route path='/forgot' component={ForgotPage} /> : null}
 
         <Redirect to='/' />
       </Switch>
