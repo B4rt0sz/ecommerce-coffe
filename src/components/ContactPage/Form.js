@@ -1,27 +1,24 @@
-import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
-import { motion } from 'framer-motion'
+import { toast } from 'react-toastify'
 
 const Form = () => {
-  const [messageSend, setMessageSend] = useState(false)
-
   const schema = yup.object().shape({
     name: yup
       .string()
-      .required('Please enter your name.')
+      .required('Please enter your Name.')
       .min(2, 'At least two characters are required.')
       .matches(/^[aA-zZ\s]+$/, 'Name should not contain numbers')
       .max(30, 'The max number of characters is thirty.'),
     email: yup
       .string()
-      .required('Please enter your email address.')
+      .required('Please enter your E-mail address.')
       .min(2, 'At least two characters are required.')
       .email('Please enter a valid email address.'),
     message: yup
       .string()
-      .required('Please enter your message.')
+      .required('Please enter your Message.')
       .min(10, 'At least ten characters are required.')
       .max(
         1000,
@@ -41,8 +38,17 @@ const Form = () => {
 
   const sendEmail = () => {
     reset()
-    setMessageSend(true)
-    setTimeout(() => setMessageSend(false), 3000)
+    toast.success(`Your message has been sent!`, {
+      position: 'top-center',
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+      theme: 'dark',
+      style: { fontSize: '16px' },
+    })
   }
 
   const text = {
@@ -110,19 +116,11 @@ const Form = () => {
           </p>
         )}
 
-        {messageSend && (
-          <p className='contact__form-container-success'>
-            Your message has been sent!
-          </p>
-        )}
-        <motion.input
+        <input
           className='contact__form-container-submit'
           type='submit'
           value='Send'
-          whileHover={{
-            backgroundColor: '#996e34',
-          }}
-        ></motion.input>
+        ></input>
       </form>
     </div>
   )

@@ -20,10 +20,10 @@
     }
 
     &-item {
-      font-size: 1.2em;
+      font-size: 1.15em;
 
       @media (min-width: 620px) {
-        font-size: 1.4em;
+        font-size: 1.35em;
       }
 
       @media (min-width: 764px) {
@@ -74,7 +74,11 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      margin: 50px;
+      margin: 20px;
+
+      @media (min-width: 340px) {
+        margin: 50px;
+      }
     }
 
     &-item {

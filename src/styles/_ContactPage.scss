@@ -84,6 +84,10 @@
         a {
           color: $WhiteColor;
           text-decoration: none;
+
+          &:hover {
+            color: $LightGoldColor;
+          }
         }
 
         @media (min-width: 764px) {
@@ -237,6 +241,10 @@
         &:focus {
           outline: none;
           border: 1px solid $DarkGoldColor;
+
+          &::placeholder {
+            color: #efefefa9;
+          }
         }
       }
 
@@ -287,6 +295,10 @@
 
       &-submit {
         @include Button;
+
+        &:hover {
+          background-color: $DarkGoldColor;
+        }
       }
     }
   }

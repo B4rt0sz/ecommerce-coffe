@@ -2,22 +2,23 @@ import { NavLink, useLocation } from 'react-router-dom'
 import { useIsMobile } from '../../hooks/useMediaQuery'
 import { IoCartOutline } from 'react-icons/io5'
 
+import { auth } from '../../firebase'
+import { signOut } from 'firebase/auth'
+
+import { toast } from 'react-toastify'
+
+import { useSelector } from 'react-redux'
+import { isUserLogged } from '../../store/slices/userSlice'
+
 const NavLinks = ({ closeMobileMenu, length }) => {
+  const showMenu = useSelector(isUserLogged)
+
   const isMobile = useIsMobile()
   const location = useLocation()
 
   const classList = isMobile ? 'header__menuMobile-list' : 'header__menu-list'
   const classItem = isMobile ? 'header__menuMobile-item' : 'header__menu-item'
   const cartClass = isMobile ? 'header__menuMobile-cart' : 'header__menu-cart'
-
-  const cart = !isMobile ? (
-    <div className={cartClass}>
-      <NavLink to='/cart'>
-        <IoCartOutline />
-        {length ? <span>{length}</span> : null}
-      </NavLink>
-    </div>
-  ) : null
 
   const isCurrentURL = (url) => {
     return location.pathname.toLowerCase() === url.toLowerCase()
@@ -29,8 +30,49 @@ const NavLinks = ({ closeMobileMenu, length }) => {
     { name: 'subscription', path: '/subscription' },
     { name: 'about us', path: '/about_us' },
     { name: 'contact', path: '/contact' },
-    { name: 'log in', path: '/login' },
   ]
+
+  const logout = () => {
+    isMobile && closeMobileMenu()
+    signOut(auth)
+    toast.success(`You logged out!`, {
+      position: 'top-center',
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+      theme: 'dark',
+      style: { fontSize: '16px' },
+    })
+  }
+
+  const login = !showMenu ? (
+    <li className={classItem} onClick={() => isMobile && closeMobileMenu()}>
+      <NavLink to='/login'>log in</NavLink>
+    </li>
+  ) : (
+    <>
+      {!isCurrentURL('/account') && (
+        <li className={classItem} onClick={() => isMobile && closeMobileMenu()}>
+          <NavLink to='/account'>account</NavLink>
+        </li>
+      )}
+      <li className={classItem} onClick={logout}>
+        <NavLink to='/'>sign out</NavLink>
+      </li>
+    </>
+  )
+
+  const cart = !isMobile ? (
+    <li className={cartClass}>
+      <NavLink to='/cart'>
+        <IoCartOutline />
+        {length ? <span>{length}</span> : null}
+      </NavLink>
+    </li>
+  ) : null
 
   const menu = menuList.map(
     (section) =>
@@ -53,6 +95,7 @@ const NavLinks = ({ closeMobileMenu, length }) => {
     <>
       <ul className={classList}>
         {menu}
+        {login}
         {cart}
       </ul>
     </>

@@ -1,5 +1,3 @@
-import { motion } from 'framer-motion'
-
 import {
   IoLocationOutline,
   IoPhonePortraitOutline,
@@ -13,15 +11,9 @@ const Details = () => {
         <IoMailOutline className='contact__details-mail-icon' />
         <div className='contact__details-mail-text'>
           <p>Here you can write:</p>
-          <motion.a
-            href='mailto:twoje@egocoffee.pl'
-            target='_blank'
-            whileHover={{
-              color: '#e6bc75',
-            }}
-          >
+          <a href='mailto:twoje@egocoffee.pl' target='_blank'>
             twoje@egocoffee.pl
-          </motion.a>
+          </a>
         </div>
       </div>
       <div className='contact__details-phone'>
