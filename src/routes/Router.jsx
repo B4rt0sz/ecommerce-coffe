@@ -1,4 +1,4 @@
-import { Route, Switch, useLocation } from 'react-router-dom'
+import { Redirect, Route, Switch, useLocation } from 'react-router-dom'
 
 import HomePage from '../pages/HomePage'
 import ShopPage from '../pages/ShopPage'
@@ -12,9 +12,14 @@ import CoffeeProductPage from '../pages/CoffeeProductPage'
 import MerchandisePage from '../pages/MerchandisePage'
 import MerchandiseProductPage from '../pages/MerchandiseProductPage'
 import CartPage from '../pages/CartPage'
+import LoginPage from '../pages/LoginPage'
+
+import { useSelector } from 'react-redux'
+import { isUserLogged } from '../store/slices/userSlice'
 
 const Router = () => {
   const location = useLocation()
+  const showMenu = useSelector(isUserLogged)
 
   return (
     <>
@@ -34,6 +39,9 @@ const Router = () => {
         <Route path='/about_us' component={AboutPage} />
         <Route path='/contact' component={ContactPage} />
         <Route path='/cart' component={CartPage} />
+        {!showMenu ? <Route path='/login' component={LoginPage} /> : null}
+
+        <Redirect to='/' />
       </Switch>
     </>
   )
