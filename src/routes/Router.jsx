@@ -15,6 +15,7 @@ import CartPage from '../pages/CartPage'
 import LoginPage from '../pages/LoginPage'
 import ForgotPage from '../pages/ForgotPage'
 import RegisterPage from '../pages/RegisterPage'
+import AccountPage from '../pages/AccountPage'
 
 import { useSelector } from 'react-redux'
 import { isUserLogged } from '../store/slices/userSlice'
@@ -44,7 +45,7 @@ const Router = () => {
         {!showMenu ? <Route path='/login' component={LoginPage} /> : null}
         {!showMenu ? <Route path='/forgot' component={ForgotPage} /> : null}
         {!showMenu ? <Route path='/register' component={RegisterPage} /> : null}
-
+        {showMenu ? <Route path='/account' component={AccountPage} /> : null}
         <Redirect to='/' />
       </Switch>
     </>
