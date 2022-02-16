@@ -20,13 +20,29 @@
     }
 
     &-item {
-      font-size: 1.15em;
+      font-size: 1em;
 
       @media (min-width: 620px) {
-        font-size: 1.35em;
+        font-size: 1.2em;
+      }
+
+      @media (min-width: 660px) {
+        font-size: 1.3em;
       }
 
       @media (min-width: 764px) {
+        font-size: 1.5em;
+      }
+
+      @media (min-width: 787px) {
+        font-size: 1.6em;
+      }
+
+      @media (min-width: 826px) {
+        font-size: 1.7em;
+      }
+
+      @media (min-width: 864px) {
         font-size: 1.8em;
       }
 
@@ -83,9 +99,13 @@
 
     &-item {
       width: 100%;
-      font-size: 2em;
       margin: 1.2em;
       text-align: center;
+      font-size: 1.8em;
+
+      @media (min-width: 340px) {
+        font-size: 2em;
+      }
 
       a {
         margin: 0.2em;

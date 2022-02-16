@@ -1,5 +1,8 @@
 .privacy {
   @include PrivacyGeneral;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &__title {
     @include PrivacyTitle;

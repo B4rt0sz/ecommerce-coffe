@@ -42,6 +42,14 @@
         left: 50%;
         width: 100%;
         transform: translate(-50%, -50%);
+
+        @media (min-width: 768px) {
+          font-size: 5em;
+        }
+
+        @media (min-width: 1070px) {
+          font-size: 5.6em;
+        }
       }
 
       a {
