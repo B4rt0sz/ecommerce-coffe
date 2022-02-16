@@ -4,17 +4,10 @@ import { NavLink } from 'react-router-dom'
 import CartProduct from '../components/CartPage/CartProduct'
 import CartSubtotal from '../components/CartPage/CartSubtotal'
 import CartTitles from '../components/CartPage/CartTitles'
-import {
-  cartAmout,
-  selectItems,
-  subtotalAmout,
-} from '../store/slices/cartSlice'
+import { selectItems } from '../store/slices/cartSlice'
 
 const CartPage = () => {
   const items = useSelector(selectItems)
-
-  const itemsQuantity = useSelector(cartAmout)
-  const itemsPrice = useSelector(subtotalAmout)
 
   return (
     <section className='cart'>
@@ -45,7 +38,7 @@ const CartPage = () => {
                 item={item}
               />
             ))}
-            <CartSubtotal quantity={itemsQuantity} price={itemsPrice} />
+            <CartSubtotal />
           </>
         )}
       </div>

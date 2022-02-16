@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import { useDisableBodyScroll } from '../../hooks/useDisableBodyScroll'
+import useScrollBlock from '../../hooks/useScrollBlock'
 import { useIsMobile } from '../../hooks/useMediaQuery'
 import useToggle from '../../hooks/useToggle'
 import NavLinks from './NavLinks'
@@ -11,12 +11,24 @@ const MobileNavigation = ({ length }) => {
   const isMobile = useIsMobile()
   const [isOpen, toggleIsOpen] = useToggle(false)
   const closeMobileMenu = () => toggleIsOpen((isOpen) => !isOpen)
-  useDisableBodyScroll(isOpen)
+  const [blockScroll, allowScroll] = useScrollBlock()
 
   const menuIcon = !isOpen ? (
-    <IoMenuOutline className='header__hamburger-icon' onClick={toggleIsOpen} />
+    <IoMenuOutline
+      className='header__hamburger-icon'
+      onClick={() => {
+        toggleIsOpen()
+        blockScroll()
+      }}
+    />
   ) : (
-    <IoCloseOutline className='header__hamburger-icon' onClick={toggleIsOpen} />
+    <IoCloseOutline
+      className='header__hamburger-icon'
+      onClick={() => {
+        toggleIsOpen()
+        allowScroll()
+      }}
+    />
   )
 
   const cartClass = isMobile ? 'header__menuMobile-cart' : 'header__menu-cart'
@@ -24,7 +36,12 @@ const MobileNavigation = ({ length }) => {
   const cart = isMobile ? (
     <div className={cartClass}>
       <NavLink to='/cart'>
-        <IoCartOutline />
+        <IoCartOutline
+          onClick={() => {
+            toggleIsOpen(false)
+            allowScroll()
+          }}
+        />
         {length ? <span>{length}</span> : null}
       </NavLink>
     </div>
