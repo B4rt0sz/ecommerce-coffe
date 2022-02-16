@@ -171,5 +171,6 @@ export const {
 export const selectItems = (state) => state.cart.items
 export const cartAmout = (state) => state.cart.cartTotalQuantity
 export const subtotalAmout = (state) => state.cart.cartTotalAmount
+export const shippingPrice = (state) => state.cart.cartFreeShipping
 
 export default cartSlice.reducer
