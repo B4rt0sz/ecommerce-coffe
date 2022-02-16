@@ -240,9 +240,208 @@
   }
 
   &__orders {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     margin-top: 16px;
 
-    &-noOrders {
+    &-title {
+      text-align: center;
+      margin-bottom: 16px;
+      font-size: 1.4em;
+
+      @media (min-width: 768px) {
+        font-size: 1.6em;
+      }
+    }
+
+    &-container {
+      display: flex;
+      flex-direction: column;
+      max-width: 550px;
+
+      &-order {
+        display: flex;
+        flex-wrap: wrap;
+
+        padding: 10px;
+        margin-bottom: 16px;
+        border-radius: 10px;
+        background-color: #282828;
+
+        &-title {
+          font-size: 1.2em;
+          margin-bottom: 8px;
+          width: 100%;
+
+          @media (min-width: 568px) {
+            width: 50%;
+          }
+
+          @media (min-width: 764px) {
+            font-size: 1.4em;
+          }
+
+          small {
+            font-size: 0.85em;
+            font-weight: 500;
+          }
+        }
+
+        &-date {
+          font-size: 1.1em;
+          margin-bottom: 16px;
+          width: 100%;
+
+          @media (min-width: 568px) {
+            width: 50%;
+            text-align: right;
+          }
+
+          @media (min-width: 764px) {
+            font-size: 1.3em;
+          }
+        }
+
+        &-product {
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          padding-top: 8px;
+          margin-bottom: 8px;
+          border-top: 1px solid rgba(239, 239, 239, 0.3);
+
+          img {
+            display: block;
+            width: 40px;
+
+            @media (min-width: 360px) {
+              width: 50px;
+            }
+
+            @media (min-width: 390px) {
+              width: 60px;
+            }
+
+            @media (min-width: 568px) {
+              width: 70px;
+            }
+
+            @media (min-width: 1070px) {
+              width: 90px;
+            }
+          }
+
+          .info {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1px;
+            font-size: 0.9em;
+
+            @media (min-width: 360px) {
+              font-size: 1.1em;
+            }
+
+            @media (min-width: 375px) {
+              font-size: 1.2em;
+            }
+
+            @media (min-width: 568px) {
+              font-size: 1.4em;
+            }
+
+            p {
+              margin-top: 4px;
+            }
+
+            .summary {
+              width: 120px;
+              display: flex;
+              justify-content: space-between;
+
+              strong {
+                font-weight: 500;
+              }
+            }
+          }
+        }
+
+        &-delivery {
+          width: 100%;
+          padding-top: 8px;
+          border-top: 1px solid rgba(239, 239, 239, 0.3);
+
+          small {
+            font-size: 0.85em;
+            font-weight: 500;
+          }
+
+          p {
+            font-size: 1.1em;
+
+            @media (min-width: 360px) {
+              font-size: 1.2em;
+            }
+
+            @media (min-width: 764px) {
+              font-size: 1.4em;
+            }
+          }
+        }
+
+        &-shipping {
+          width: 100%;
+          margin-top: 8px;
+          margin-bottom: 8px;
+
+          small {
+            font-size: 0.85em;
+            font-weight: 500;
+          }
+
+          p {
+            font-size: 1.1em;
+
+            @media (min-width: 360px) {
+              font-size: 1.2em;
+            }
+
+            @media (min-width: 764px) {
+              font-size: 1.4em;
+            }
+          }
+        }
+
+        &-total {
+          width: 100%;
+          text-align: right;
+
+          p {
+            font-size: 1.2em;
+
+            @media (min-width: 764px) {
+              font-size: 1.4em;
+            }
+          }
+
+          strong {
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+
+  &__noOrders {
+    margin-top: 16px;
+    p {
       text-align: center;
       width: 100%;
       @include TextMobile;

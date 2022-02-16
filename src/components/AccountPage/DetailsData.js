@@ -134,7 +134,7 @@ const DetailsData = () => {
 
   return (
     <div className='account__details-data'>
-      <h2 className='account__details-data-title'>Account Details:</h2>
+      <h2 className='account__details-data-title'>Account details:</h2>
       <form
         className='account__details-data-form'
         onSubmit={handleSubmit(changePassword)}

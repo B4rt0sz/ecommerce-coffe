@@ -14,15 +14,15 @@ const DetailsAddress = () => {
 
   useEffect(() => {
     const defaultValues = {
-      firstName: userInfo.firstName,
-      lastName: userInfo.lastName,
-      address: userInfo.address,
-      zipCode: userInfo.zipCode,
-      city: userInfo.city,
-      country: userInfo.country,
-      phone: userInfo.phone,
-      nip: userInfo.nip,
-      company: userInfo.company,
+      firstName: userInfo?.firstName,
+      lastName: userInfo?.lastName,
+      address: userInfo?.address,
+      zipCode: userInfo?.zipCode,
+      city: userInfo?.city,
+      country: userInfo?.country,
+      phone: userInfo?.phone,
+      nip: userInfo?.nip,
+      company: userInfo?.company,
     }
     reset({ ...defaultValues })
   }, [userInfo])
@@ -133,7 +133,7 @@ const DetailsAddress = () => {
 
   return (
     <div className='account__details-address'>
-      <h2 className='account__details-address-title'>Account Address:</h2>
+      <h2 className='account__details-address-title'>Account address:</h2>
       <form
         className='account__details-address-form'
         onSubmit={handleSubmit(changeAddress)}
@@ -225,14 +225,14 @@ const DetailsAddress = () => {
         <input
           className='account__details-address-form-input'
           type='text'
-          placeholder='Nip'
+          placeholder='Nip (optional)'
           {...register('nip')}
         />
 
         <input
           className='account__details-address-form-input'
           type='text'
-          placeholder='Company'
+          placeholder='Company (optional)'
           {...register('company')}
         />
 
