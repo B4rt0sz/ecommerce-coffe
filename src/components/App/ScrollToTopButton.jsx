@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { BsFillArrowUpCircleFill } from 'react-icons/bs'
 import { IoIosArrowDropupCircle } from 'react-icons/io'
 
 const ScrollToTopButton = () => {
@@ -7,7 +6,7 @@ const ScrollToTopButton = () => {
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 300) {
+      if (window.pageYOffset >= 300) {
         setShowButton(true)
       } else {
         setShowButton(false)
