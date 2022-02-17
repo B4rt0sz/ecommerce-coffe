@@ -1,8 +1,7 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
-import LoadingScreen from './layouts/LoadingScreen'
 import Header from './layouts/Header'
 import Router from './routes/Router'
 import Footer from './layouts/Footer'
@@ -15,8 +14,6 @@ import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from './firebase'
 
 function App() {
-  const [loading, setLoading] = useState(true)
-
   const items = useSelector(selectItems)
   const dispatch = useDispatch()
 
@@ -34,14 +31,6 @@ function App() {
     dispatch(getTotals())
     dispatch(freeShipping())
   }, [items])
-
-  useEffect(() => {
-    setTimeout(() => setLoading(false), 500)
-  }, [])
-
-  if (loading) {
-    return <LoadingScreen />
-  }
 
   return (
     <div className='wrapper'>

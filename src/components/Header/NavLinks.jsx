@@ -10,7 +10,7 @@ import { toast } from 'react-toastify'
 import { useSelector } from 'react-redux'
 import { isUserLogged } from '../../store/slices/userSlice'
 
-const NavLinks = ({ closeMobileMenu, length }) => {
+const NavLinks = ({ closeMobileMenu, length, allowScroll }) => {
   const showMenu = useSelector(isUserLogged)
 
   const isMobile = useIsMobile()
@@ -35,6 +35,7 @@ const NavLinks = ({ closeMobileMenu, length }) => {
   const logout = () => {
     isMobile && closeMobileMenu()
     signOut(auth)
+    allowScroll()
     toast.success(`You logged out!`, {
       position: 'top-center',
       autoClose: 2000,
@@ -49,13 +50,25 @@ const NavLinks = ({ closeMobileMenu, length }) => {
   }
 
   const login = !showMenu ? (
-    <li className={classItem} onClick={() => isMobile && closeMobileMenu()}>
+    <li
+      className={classItem}
+      onClick={() => {
+        isMobile && closeMobileMenu()
+        allowScroll()
+      }}
+    >
       <NavLink to='/login'>log in</NavLink>
     </li>
   ) : (
     <>
       {!isCurrentURL('/account') && (
-        <li className={classItem} onClick={() => isMobile && closeMobileMenu()}>
+        <li
+          className={classItem}
+          onClick={() => {
+            isMobile && closeMobileMenu()
+            allowScroll()
+          }}
+        >
           <NavLink to='/account'>account</NavLink>
         </li>
       )}
@@ -80,7 +93,10 @@ const NavLinks = ({ closeMobileMenu, length }) => {
         <li
           className={classItem}
           key={section.name}
-          onClick={() => isMobile && closeMobileMenu()}
+          onClick={() => {
+            isMobile && closeMobileMenu()
+            allowScroll()
+          }}
         >
           <NavLink
             to={section.path}

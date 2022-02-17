@@ -84,7 +84,13 @@ const MobileNavigation = ({ length }) => {
             animate={'animate'}
             exit={'exit'}
           >
-            {<NavLinks closeMobileMenu={closeMobileMenu} length={length} />}
+            {
+              <NavLinks
+                closeMobileMenu={closeMobileMenu}
+                length={length}
+                allowScroll={allowScroll}
+              />
+            }
           </motion.nav>
         )}
       </AnimatePresence>
