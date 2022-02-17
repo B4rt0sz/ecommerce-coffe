@@ -115,17 +115,6 @@ export const cartSlice = createSlice({
 
     clearCart: (state, action) => {
       state.items = []
-      toast.error(`Cart cleared!`, {
-        position: 'bottom-right',
-        autoClose: 2000,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: false,
-        progress: undefined,
-        theme: 'dark',
-        style: { fontSize: '16px' },
-      })
       localStorage.setItem('items', JSON.stringify(state.items))
     },
 

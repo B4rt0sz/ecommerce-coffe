@@ -1,6 +1,7 @@
 import { useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import NumberFormat from 'react-number-format'
+import { toast } from 'react-toastify'
 
 import {
   cartAmout,
@@ -18,6 +19,17 @@ const CartSubtotal = () => {
 
   const handleClearCart = () => {
     dispatch(clearCart())
+    toast.error(`Cart cleared!`, {
+      position: 'top-center',
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+      theme: 'dark',
+      style: { fontSize: '16px' },
+    })
   }
 
   const shippingCost = shippingInfo ? 0 : 3
