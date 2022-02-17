@@ -6,10 +6,10 @@ const ScrollToTopButton = () => {
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      if (window.pageYOffset >= 300) {
-        setShowButton(true)
+      if (window.pageYOffset >= 250) {
+        return setShowButton(true)
       } else {
-        setShowButton(false)
+        return setShowButton(false)
       }
     })
   }, [])

@@ -12,7 +12,7 @@ const AccountOrders = () => {
     if (auth) {
       const citiesRef = collection(db, 'users', auth.currentUser.uid, 'orders')
       const q = query(citiesRef, orderBy('created', 'desc'))
-      onSnapshot(q, (snapshot) =>
+      return onSnapshot(q, (snapshot) =>
         setOrders(
           snapshot.docs.map((doc) => ({
             id: doc.id,
@@ -21,7 +21,7 @@ const AccountOrders = () => {
         )
       )
     } else {
-      setOrders([])
+      return setOrders([])
     }
   }, [auth])
 

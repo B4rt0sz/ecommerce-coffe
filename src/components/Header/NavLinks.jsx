@@ -35,7 +35,7 @@ const NavLinks = ({ closeMobileMenu, length, allowScroll }) => {
   const logout = () => {
     isMobile && closeMobileMenu()
     signOut(auth)
-    allowScroll()
+    isMobile && allowScroll()
     toast.success(`You logged out!`, {
       position: 'top-center',
       autoClose: 2000,
@@ -54,7 +54,7 @@ const NavLinks = ({ closeMobileMenu, length, allowScroll }) => {
       className={classItem}
       onClick={() => {
         isMobile && closeMobileMenu()
-        allowScroll()
+        isMobile && allowScroll()
       }}
     >
       <NavLink to='/login'>log in</NavLink>
@@ -66,7 +66,7 @@ const NavLinks = ({ closeMobileMenu, length, allowScroll }) => {
           className={classItem}
           onClick={() => {
             isMobile && closeMobileMenu()
-            allowScroll()
+            isMobile && allowScroll()
           }}
         >
           <NavLink to='/account'>account</NavLink>
@@ -95,7 +95,7 @@ const NavLinks = ({ closeMobileMenu, length, allowScroll }) => {
           key={section.name}
           onClick={() => {
             isMobile && closeMobileMenu()
-            allowScroll()
+            isMobile && allowScroll()
           }}
         >
           <NavLink
