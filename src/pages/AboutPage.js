@@ -3,8 +3,13 @@ import Info from '../components/AboutPage/Info'
 
 import ArekIMG from '../../public/images/aboutArek.jpg'
 import ZuzaIMG from '../../public/images/aboutZuza.jpg'
+import { useEffect } from 'react'
 
 const AboutPage = () => {
+  useEffect(() => {
+    document.title = 'About Us | EGO COFFE'
+  }, [])
+
   return (
     <section className='about'>
       <div className='container'>

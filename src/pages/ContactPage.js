@@ -1,7 +1,12 @@
+import { useEffect } from 'react'
 import Details from '../components/ContactPage/Details'
 import Form from '../components/ContactPage/Form'
 
 const ContactPage = () => {
+  useEffect(() => {
+    document.title = 'Contact | EGO COFFE'
+  }, [])
+
   return (
     <section className='contact'>
       <div className='container'>

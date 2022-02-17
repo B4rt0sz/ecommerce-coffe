@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import ProductCarousel from '../components/MerchandiseProductPage/ProductCarousel'
 import ProductDescription from '../components/MerchandiseProductPage/ProductDescription'
 
@@ -7,6 +8,10 @@ const data = dataMerchandise.merchandise
 
 const MerchandiseProductPage = ({ match }) => {
   const id = match.params.id
+
+  useEffect(() => {
+    document.title = 'Merchandise | EGO COFFE'
+  }, [])
 
   return (
     <section className='merchandiseProduct'>

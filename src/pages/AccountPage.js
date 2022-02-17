@@ -4,9 +4,14 @@ import { showUserInfo } from '../store/slices/accountSlice'
 import AccountOrders from '../components/AccountPage/AccountOrders'
 import AccountDetails from '../components/AccountPage/AccountDetails'
 import AccountNavigation from '../components/AccountPage/AccountNavigation'
+import { useEffect } from 'react'
 
 const AccountPage = () => {
   const showInfo = useSelector(showUserInfo)
+
+  useEffect(() => {
+    document.title = 'Account | EGO COFFE'
+  }, [])
 
   return (
     <section className='account'>

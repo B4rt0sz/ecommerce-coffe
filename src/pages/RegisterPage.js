@@ -1,6 +1,11 @@
+import { useEffect } from 'react'
 import RegisterContainer from '../components/RegisterPage/RegisterContainer'
 
 const RegisterPage = () => {
+  useEffect(() => {
+    document.title = 'Register | EGO COFFE'
+  }, [])
+
   return (
     <section className='register'>
       <div className='container'>

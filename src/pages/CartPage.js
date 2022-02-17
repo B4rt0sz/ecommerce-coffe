@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 
@@ -8,6 +9,10 @@ import { selectItems } from '../store/slices/cartSlice'
 
 const CartPage = () => {
   const items = useSelector(selectItems)
+
+  useEffect(() => {
+    document.title = 'Cart | EGO COFFE'
+  }, [])
 
   return (
     <section className='cart'>

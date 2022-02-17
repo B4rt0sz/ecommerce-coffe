@@ -1,8 +1,14 @@
 import Coffee from '../components/ShopPage/Coffee'
 import Merchandise from '../components/ShopPage/Merchandise'
+import { useEffect } from 'react'
 
 const ShopPage = ({ match }) => {
   const url = match.url
+
+  useEffect(() => {
+    document.title = 'Shop | EGO COFFE'
+  }, [])
+
   return (
     <section className='shop'>
       <div className='container'>

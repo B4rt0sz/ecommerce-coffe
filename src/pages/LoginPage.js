@@ -1,6 +1,11 @@
+import { useEffect } from 'react'
 import LoginContainer from '../components/LoginPage/LoginContainer'
 
 const LoginPage = () => {
+  useEffect(() => {
+    document.title = 'Login | EGO COFFE'
+  }, [])
+
   return (
     <section className='login'>
       <div className='container'>

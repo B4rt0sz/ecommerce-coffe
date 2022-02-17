@@ -11,8 +11,13 @@ import Withdrawal from '../components/TermsPage/Withdrawal'
 import Complaint from '../components/TermsPage/Complaint'
 import Claims from '../components/TermsPage/Claims'
 import Final from '../components/TermsPage/Final'
+import { useEffect } from 'react'
 
 const TermsPage = () => {
+  useEffect(() => {
+    document.title = 'Terms & Conditions | EGO COFFE'
+  }, [])
+
   return (
     <section className='termsConditions'>
       <div className='container'>
