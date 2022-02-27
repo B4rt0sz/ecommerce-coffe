@@ -88,7 +88,7 @@
             top: auto;
             bottom: 0;
             height: 50px;
-            transition: 1s;
+            transition: 0.6s;
           }
         }
 
@@ -109,7 +109,7 @@
           @media (pointer: fine) {
             opacity: 0;
             visibility: hidden;
-            transition: 0.5s ease;
+            transition: 0.3s ease;
           }
         }
 
@@ -130,7 +130,7 @@
           @media (pointer: fine) {
             display: block;
             transform: translateY(150px);
-            transition: 0.5s;
+            transition: 0.3s;
           }
 
           &:hover {

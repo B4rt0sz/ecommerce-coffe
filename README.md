@@ -6,6 +6,13 @@
 
 :computer: [EGO COFFEE](https://egocoffee.netlify.app/)
 
+```
+Card info for payment:
+Number: 4242 4242 4242 4242
+Date: any
+CVC: any
+```
+
 ## Installation
 
 Clone this repository and npm install:
