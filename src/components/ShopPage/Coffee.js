@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import coffeeIMG from '../../../public/images/shopCoffee.jpg'
 
 const Coffee = ({ url }) => {
   return (
@@ -7,7 +6,7 @@ const Coffee = ({ url }) => {
       <Link to={`${url}/coffee`}>
         <img
           className='shop__coffee-img'
-          src={coffeeIMG}
+          src='/images/shopCoffee.jpg'
           alt='coffee'
           loading='lazy'
         />

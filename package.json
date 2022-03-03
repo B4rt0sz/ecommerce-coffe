@@ -1,6 +1,6 @@
 {
   "name": "ecommerce-coffe-shop",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Project of an e-commerce coffee shop based on React and Firebase.",
   "author": "Bartosz Szućko",
   "license": "PRIVATE",
@@ -18,6 +18,7 @@
     "@babel/preset-react": "^7.14.5",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
     "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^10.2.4",
     "css-loader": "^6.2.0",
     "css-minimizer-webpack-plugin": "^3.0.2",
     "dotenv-webpack": "^7.0.3",

@@ -1,4 +1,3 @@
-import coffeeVideo from '../../../public/videos/video.mp4'
 import { NavLink } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
@@ -7,7 +6,7 @@ const Video = () => {
     <section className='home__banner'>
       <video
         className='home__banner-video'
-        src={coffeeVideo}
+        src='/videos/video.mp4'
         playsInline
         autoPlay
         loop

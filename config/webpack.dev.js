@@ -8,7 +8,7 @@ module.exports = {
 
   devServer: {
     historyApiFallback: true,
-    contentBase: path.resolve(__dirname, '..', './dist'),
+    contentBase: path.resolve(__dirname, '..', './public'),
     open: true,
     hot: true,
     compress: true,

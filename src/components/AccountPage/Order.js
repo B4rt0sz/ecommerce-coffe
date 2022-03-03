@@ -4,12 +4,12 @@ import NumberFormat from 'react-number-format'
 const Order = ({ order }) => {
   const ordersItem = () => {
     const orderItem = order.data.cart?.map((item, i) => {
-      let itemPurchaseType
-
-      if (item.category === 'merchandise') itemPurchaseType = item.purchaseType
-      else if (item.category === 'coffee' && item.purchaseType === 'one-time')
-        itemPurchaseType = `${item.purchaseType}`
-      else itemPurchaseType = `${item.purchaseType} | ${item.subscription}`
+      const itemPurchaseType =
+        item.category === 'merchandise'
+          ? item.purchaseType
+          : item.category === 'coffee' && item.purchaseType === 'one-time'
+          ? item.purchaseType
+          : `${item.purchaseType} | ${item.subscription} months`
 
       const oneItem = (
         <div className='account__orders-container-order-product' key={i}>

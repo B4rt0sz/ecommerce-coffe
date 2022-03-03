@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 
-const Designer = () => {
-  const linkedinURL = 'https://www.linkedin.com/in/bartoszszucko/'
+const linkedinURL = 'https://www.linkedin.com/in/bartoszszucko/'
 
+const Designer = () => {
   return (
     <div className='footer__designer'>
       <p>

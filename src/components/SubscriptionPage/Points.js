@@ -1,16 +1,16 @@
-const Points = () => {
-  const points = [
-    { id: 1, text: 'Choose your favorite Coffee.' },
-    { id: 2, text: 'Select a subscription plan.' },
-    { id: 3, text: 'Enter your preferred delivery address and date.' },
-    { id: 4, text: 'Make the payment.' },
-    {
-      id: 5,
-      text: 'Product will be delivered right to your doorstep.',
-    },
-    { id: 6, text: 'Enjoy the coffee, and your discount!' },
-  ]
+const points = [
+  { id: 1, text: 'Choose your favorite Coffee.' },
+  { id: 2, text: 'Select a subscription plan.' },
+  { id: 3, text: 'Enter your preferred delivery address and date.' },
+  { id: 4, text: 'Make the payment.' },
+  {
+    id: 5,
+    text: 'Product will be delivered right to your doorstep.',
+  },
+  { id: 6, text: 'Enjoy the coffee, and your discount!' },
+]
 
+const Points = () => {
   const subscriptionPoints = points.map((item) => (
     <li className='subscription__points-list-item' key={item.id}>
       <p>

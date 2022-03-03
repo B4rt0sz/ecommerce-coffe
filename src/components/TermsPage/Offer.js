@@ -1,22 +1,22 @@
-const Offer = () => {
-  const offerList = [
-    {
-      id: 1,
-      text: 'The Customer may use the following methods of delivery or collection of the ordered Product:',
-      textA: 'courier service.',
-    },
-    {
-      id: 2,
-      text: 'The customer can use the following payment methods:',
-      textA: 'PayU payments,',
-      textB: "direct transfer to the Seller's bank account.",
-    },
-    {
-      id: 3,
-      text: "Detailed information on delivery methods and acceptable payment methods can be found on the Store's website.",
-    },
-  ]
+const offerList = [
+  {
+    id: 1,
+    text: 'The Customer may use the following methods of delivery or collection of the ordered Product:',
+    textA: 'courier service.',
+  },
+  {
+    id: 2,
+    text: 'The customer can use the following payment methods:',
+    textA: 'PayU payments,',
+    textB: "direct transfer to the Seller's bank account.",
+  },
+  {
+    id: 3,
+    text: "Detailed information on delivery methods and acceptable payment methods can be found on the Store's website.",
+  },
+]
 
+const Offer = () => {
   const offer = offerList.map((item) => (
     <li className='termsConditions__offer-item' key={item.id}>
       <p>

@@ -1,8 +1,6 @@
 import Introduction from '../components/AboutPage/Introduction'
 import Info from '../components/AboutPage/Info'
 
-import ArekIMG from '../../public/images/aboutArek.jpg'
-import ZuzaIMG from '../../public/images/aboutZuza.jpg'
 import { useEffect } from 'react'
 
 const AboutPage = () => {
@@ -15,9 +13,19 @@ const AboutPage = () => {
       <div className='container'>
         <h1 className='about__title'>About Us</h1>
         <Introduction />
-        <img className='about__img' src={ZuzaIMG} alt='zuza' loading='lazy' />
+        <img
+          className='about__img'
+          src='/images/aboutZuza.jpg'
+          alt='zuza'
+          loading='lazy'
+        />
         <Info />
-        <img className='about__img' src={ArekIMG} alt='arek' loading='lazy' />
+        <img
+          className='about__img'
+          src='/images/aboutArek.jpg'
+          alt='arek'
+          loading='lazy'
+        />
       </div>
     </section>
   )
