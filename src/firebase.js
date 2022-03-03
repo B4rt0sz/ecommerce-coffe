@@ -3,7 +3,7 @@ import { getFirestore } from 'firebase/firestore'
 import { getAuth } from 'firebase/auth'
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyDtQfDJrkBmCjTacmwB-zsSxukW2XvqNn8',
+  apiKey: process.env.FIREBASE_KEY,
   authDomain: 'ego-coffee-ecommerce.firebaseapp.com',
   projectId: 'ego-coffee-ecommerce',
   storageBucket: 'ego-coffee-ecommerce.appspot.com',

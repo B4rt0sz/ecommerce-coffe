@@ -24,12 +24,9 @@ import { isUserLogged } from '../store/slices/userSlice'
 import { loadStripe } from '@stripe/stripe-js'
 import { Elements } from '@stripe/react-stripe-js'
 
-const stripePromise = loadStripe(
-  'pk_test_51KMB2bIQo5YYaDQqdll9BUQExrmSpgyM6XWh8p4H2Zh0y3MXDkX2dTtmHAoSMLmFeojn6RTjQMAqVBr82sLm3IiM00SrwbwgaO',
-  {
-    locale: 'en',
-  }
-)
+const stripePromise = loadStripe(process.env.STRIPE_KEY, {
+  locale: 'en',
+})
 
 const Router = () => {
   const location = useLocation()
