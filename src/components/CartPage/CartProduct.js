@@ -18,7 +18,12 @@ const CartProduct = ({
 }) => {
   const dispatch = useDispatch()
   const product = item
-  let itemPurchaseType
+  const itemPurchaseType =
+    category === 'merchandise'
+      ? purchaseType
+      : category === 'coffee' && purchaseType === 'one-time'
+      ? purchaseType
+      : `${purchaseType} | ${subscription} months`
 
   const handleRemoveFromCart = () => {
     dispatch(removeFromCart(product))
@@ -31,11 +36,6 @@ const CartProduct = ({
   const handleIncreaseQuantity = () => {
     dispatch(addToCart(product))
   }
-
-  if (category === 'merchandise') itemPurchaseType = purchaseType
-  else if (category === 'coffee' && purchaseType === 'one-time')
-    itemPurchaseType = `${purchaseType}`
-  else itemPurchaseType = `${purchaseType} | ${subscription}`
 
   return (
     <section className='cart__products'>
